@@ -3,9 +3,9 @@
   "name": "@itsjavi/open-props-everywhere",
   "version": "0.0.1",
   "exports": {
-    "./": "./index.ts",
-    "./panda": "./adapters/panda.ts",
-    "./tailwind": "./adapters/tailwind.ts"
+    ".": "./src/index.ts",
+    "./panda": "./src/adapters/panda.ts",
+    "./tailwind": "./src/adapters/tailwind.ts"
   },
   "publish": {}
 }

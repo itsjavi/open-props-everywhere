@@ -1,6 +1,7 @@
 # @itsjavi/open-props-everywhere
 
-A library to integrate Open Props CSS variables with PandaCSS and TailwindCSS, providing a unified design token system for your projects.
+A library to integrate Open Props CSS variables with PandaCSS and TailwindCSS, providing a unified design token system
+for your projects.
 
 ## Table of Contents
 
@@ -28,7 +29,8 @@ A library to integrate Open Props CSS variables with PandaCSS and TailwindCSS, p
 
 This project only provides the presets to integrate Open Props as PandaCSS / TailwindCSS tokens.
 
-You need to install Open Props and include it in your CSS file separately.
+Since this guide uses `postcss-jit-props` you won't need to include the Open Props stylesheet in your project, as
+the plugin will generate the necessary CSS for you.
 
 ### With PandaCSS
 
@@ -51,7 +53,8 @@ You can combine it with any other preset you want.
 
 #### Optimize final CSS
 
-With `postcss-jit-props` you can optimize the final CSS by removing unused properties. Remember to add the plugin after the PandaCSS one.
+With `postcss-jit-props` you can also optimize the final CSS by removing unused properties.
+Remember to add the plugin after the PandaCSS one.
 
 ```js
 // postcss.config.cjs
@@ -88,7 +91,8 @@ You can combine it with any other preset you want.
 
 #### Optimize final CSS
 
-With `postcss-jit-props` you can optimize the final CSS by removing unused properties. Remember to add the plugin after the TailwindCSS one.
+With `postcss-jit-props` you can also optimize the final CSS by removing unused properties.
+Remember to add the plugin after the TailwindCSS one.
 
 ```js
 // postcss.config.cjs

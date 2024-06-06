@@ -1,0 +1,11 @@
+{
+  "$schema": "https://jsr.io/schema/config-file.v1.json",
+  "name": "@itsjavi/open-props-everywhere",
+  "version": "0.0.1",
+  "exports": {
+    "./": "./index.ts",
+    "./panda": "./adapters/panda.ts",
+    "./tailwind": "./adapters/tailwind.ts"
+  },
+  "publish": {}
+}

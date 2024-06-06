@@ -1,7 +1,14 @@
-import type { Config } from 'tailwindcss'
+/**
+ * TailwindCSS framework adapter module
+ *
+ * @module
+ */
 
-type Preset = NonNullable<Config['presets']>[number]
+import type { Config } from 'tailwindcss'
 
 // TODO: Implement the Tailwind CSS preset
 
-export const openPropsPreset: Preset = {}
+/**
+ * TailwindCSS Open Props Preset
+ */
+export const openPropsPreset: NonNullable<Config['presets']>[number] = {}

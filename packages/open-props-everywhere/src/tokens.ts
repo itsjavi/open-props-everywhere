@@ -84,9 +84,7 @@ const colors: Array<TokenConfig> = colorNames.map((name): TokenConfig => {
   }
 })
 
-const gradients: Array<TokenConfig> = [
-  { name: 'DEFAULT', value: cssvarSteps(opConfig.steps.gradients, 'gradient', 'g') },
-]
+const gradients: Array<TokenConfig> = [{ name: 'gradient', value: cssvarSteps(opConfig.steps.gradients, 'gradient') }]
 
 const noises: Array<TokenConfig> = [
   { name: 'noise', value: cssvarSteps(opConfig.steps.noise, 'noise') },
@@ -94,7 +92,7 @@ const noises: Array<TokenConfig> = [
 ]
 
 const shadows: Array<TokenConfig> = [
-  { name: 'lv', value: cssvarSteps(opConfig.steps.shadow, 'shadow') },
+  { name: 'shadow', value: cssvarSteps(opConfig.steps.shadow, 'shadow') },
   { name: 'inner', value: cssvarSteps(opConfig.steps.innerShadow, 'inner-shadow') },
 ]
 
@@ -128,51 +126,53 @@ const fontFamilies: Array<TokenConfig> = [
 ]
 
 const fontSizes: Array<TokenConfig> = [
-  { name: 'lv', value: cssvarSteps(opConfig.steps.fontSize, 'font-size') },
+  { name: 'size', value: cssvarSteps(opConfig.steps.fontSize, 'font-size') },
   { name: 'fluid', value: cssvarSteps(opConfig.steps.fontSizeFluid, 'font-size-fluid') },
 ]
 
 const fontWeight: Array<TokenConfig> = [{ name: 'lv', value: cssvarSteps(opConfig.steps.fontWeight, 'font-weight') }]
 const fontLetterspacing: Array<TokenConfig> = [
-  { name: 'lv', value: cssvarSteps(opConfig.steps.fontLetterspacing, 'font-letterspacing') },
+  { name: 'space', value: cssvarSteps(opConfig.steps.fontLetterspacing, 'font-letterspacing') },
 ]
 
 const fontLineheight: Array<TokenConfig> = [
-  { name: 'lv', value: cssvarSteps(opConfig.steps.fontLineheight, 'font-lineheight') },
+  { name: 'height', value: cssvarSteps(opConfig.steps.fontLineheight, 'font-lineheight') },
 ]
 
+// spacings are more for gaps, paddings and margins
 const spacings: Array<TokenConfig> = [
-  { name: 'lv', value: cssvarSteps(opConfig.steps.sizesRem, 'size') },
+  { name: 'size', value: cssvarSteps(opConfig.steps.sizesRem, 'size') },
   { name: 'px', value: cssvarSteps(opConfig.steps.sizesPx, 'size-px') },
   { name: 'fluid', value: cssvarSteps(opConfig.steps.sizesFluid, 'size-fluid') },
-  { name: 'ch', value: cssvarSteps(opConfig.steps.sizesRelativeChar, 'size-relative') },
+  { name: 'relative', value: cssvarSteps(opConfig.steps.sizesRelativeChar, 'size-relative') },
+]
+
+// sizes are more for layouts and containers widths and heights
+const sizes: Array<TokenConfig> = [
+  ...spacings,
+  { name: 'content', value: cssvarSteps(opConfig.steps.sizesProseContainer, 'size-content') },
+  { name: 'header', value: cssvarSteps(opConfig.steps.sizesHeadlineContainer, 'size-header') },
+  // extras:
   { name: 'full', value: '100%' },
   { name: 'full-vw', value: '100vw' },
   { name: 'full-vh', value: '100vh' },
-  { name: 'min', value: 'min-content' },
-  { name: 'max', value: 'max-content' },
-  { name: 'fit', value: 'fit-content' },
-]
-
-const sizes: Array<TokenConfig> = [
-  ...spacings,
-  // containers:
-  { name: 'prose', value: cssvarSteps(opConfig.steps.sizesProseContainer, 'size-content') },
-  { name: 'heading', value: cssvarSteps(opConfig.steps.sizesHeadlineContainer, 'size-header') },
   {
     name: 'screen',
     value: Object.fromEntries(screenSizes.map((size) => [size.name, size.value])) as TokenConfig['value'],
   },
 ]
 
-const borderWidths: Array<TokenConfig> = [{ name: 'lv', value: cssvarSteps(opConfig.steps.borderSizes, 'border-size') }]
+const borderWidths: Array<TokenConfig> = [
+  { name: 'size', value: cssvarSteps(opConfig.steps.borderSizes, 'border-size') },
+]
 
 const radius: Array<TokenConfig> = [
-  { name: 'lv', value: cssvarSteps(opConfig.steps.radii, 'radius') },
-  { name: 'full', value: cssvar('radius-round') },
-  { name: 'sketch', value: cssvarSteps(opConfig.steps.radii, 'radius-drawn') },
+  { name: 'radius', value: cssvarSteps(opConfig.steps.radii, 'radius') },
+  { name: 'drawn', value: cssvarSteps(opConfig.steps.radii, 'radius-drawn') }, // aka. sketch(y)
   { name: 'blob', value: cssvarSteps(opConfig.steps.radiiBlob, 'radius-blob') },
-  { name: 'fluid', value: cssvarSteps(opConfig.steps.radii, 'radius-conditional') },
+  { name: 'conditional', value: cssvarSteps(opConfig.steps.radii, 'radius-conditional') }, // aka. fluid based on vw
+  { name: 'round', value: cssvar('radius-round') },
+  { name: 'full', value: cssvar('radius-round') },
 ]
 
 const zIndices: Array<TokenConfig> = [

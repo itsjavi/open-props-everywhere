@@ -1,7 +1,8 @@
 export type CssVarString = `var(--${string})`
 export type DefaultTokenName = 'DEFAULT'
 
-export type TokenConfigValue = CssVarString | string | Record<DefaultTokenName | string | number, CssVarString>
+export type TokenConfigRecordValue = Record<string | number, string>
+export type TokenConfigValue = string | TokenConfigRecordValue
 export type TokenConfig<V extends TokenConfigValue = TokenConfigValue> = {
   name: string
   value: V

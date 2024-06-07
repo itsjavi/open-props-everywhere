@@ -15,18 +15,21 @@ export default function Home() {
   return (
     <main
       className={css({
+        flex: '1',
         display: 'flex',
         flexDir: 'column',
         justifyContent: 'space-between',
         alignItems: 'center',
-        p: 'lv.4',
-        minH: 'full-vh',
+        minH: '100%',
+        p: 'size.4',
         border: '1px solid',
         borderColor: 'blue.5',
-        borderWidth: 'lv.4',
+        borderWidth: 'size.5',
+        borderRadius: 'conditional.5',
+        m: 'relative.10',
       })}
     >
-      <div className={styles.description}>
+      <div>
         <p>
           Get started by editing&nbsp;
           <code className={styles.code}>app/page.tsx</code>

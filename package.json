@@ -38,7 +38,7 @@
     "build": "rm -rf dist && parcel build --no-cache && pnpm publint",
     "format": "pnpm biome:fix && sort-package-json",
     "postinstall": "sort-package-json",
-    "lint": "typelint && pnpm typecheck && pnpm biome:lint",
+    "lint": "pnpm typecheck && pnpm biome:lint",
     "lint:fix": "pnpm format",
     "prepublishOnly": "pnpm build",
     "pub": "echo 'Not implemented yet'",

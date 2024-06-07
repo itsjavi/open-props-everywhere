@@ -5,9 +5,17 @@ env:
   PNPM_VERSION: 9.2.0
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version bump"
+        required: true
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+        default: "minor"
 
 concurrency:
   group: publish-${{ github.ref }}
@@ -30,5 +38,13 @@ jobs:
       - name: "Quality Check"
         uses: ./.github/actions/quality-check
 
+      - name: "Bump version"
+        run: |
+          npm version ${{ github.event.inputs.version }}
+          git push origin main
+
       - name: Publish package
-        run: echo "Not implemented yet."
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        run: |
+          npm publish

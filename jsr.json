@@ -1,10 +1,23 @@
 {
   "$schema": "https://jsr.io/schema/config-file.v1.json",
   "name": "@itsjavi/open-props-everywhere",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "exports": {
     ".": "./src/index.ts",
     "./panda": "./src/adapters/panda.ts",
     "./tailwind": "./src/adapters/tailwind.ts"
+  },
+  "publish": {
+    "include": [
+      "LICENSE",
+      "README.md",
+      "jsr.json",
+      "package.json",
+      "tsconfig.json",
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      "*.test.ts"
+    ]
   }
 }

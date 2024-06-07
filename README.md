@@ -5,11 +5,12 @@ and [TailwindCSS](https://tailwindcss.com/), providing a unified design token sy
 
 Features:
 
-- Ready to use PandaCSS and TailwindCSS theme presets.
+- Ready to use PandaCSS theme presets. TailwindCSS support coming soon.
+- Automatic dark mode support, thanks to the semantic color palettes.
 - It can be used together with `postcss-jit-props` to optimize the final CSS.
 - A more convenient way to access Open Props tokens in your projects, via `openPropsTokens`.
 - A more intuitive token and token value naming, avoiding confusion with real integers
-  in PandaCSS, e.g. `borderRadius: "lv.2"` instead of `borderRadius: "2"`. This also improves TypeScript efficiency
+  in PandaCSS, e.g. `borderRadius: "radius.2"` instead of `borderRadius: "2"`. This also improves TypeScript efficiency
   and IDE code completion.
 
 ## Installation
@@ -86,11 +87,11 @@ import { styled } from "@/styled-system/jsx";
 export const Card = ({ children }) => (
   <styled.div
     css={{
-      borderRadius: "lv.2",
+      borderRadius: "radius.2",
       padding: "fluid.3",
-      boxShadow: "lv.2",
+      boxShadow: "shadow.2",
       _hover: {
-        boxShadow: "lv.3",
+        boxShadow: "shadow.3",
       },
       _motionSafe: {
         animation: "fade-in, shake-z forwards",
@@ -153,3 +154,35 @@ export const Card = ({ children }) => (
   </div>
 );
 ```
+
+## Add custom Color Palette
+
+You can generate custom color palettes using the `generatePandaColorPreset` or `generateTailwindColorPreset`\*
+functions to generate a semantic color palette preset. This is an example for PandaCSS:
+
+```ts
+import { defineConfig } from "@pandacss/dev";
+import {
+  openPropsPandaPreset,
+  generatePandaColorPreset,
+} from "open-props-everywhere";
+
+export default defineConfig({
+  // ...
+  presets: [
+    "@pandacss/preset-base",
+    openPropsPandaPreset,
+    generatePandaColorPreset({
+      blueberry: 252,
+    }),
+  ],
+  // ...
+});
+```
+
+(\*) Limitations:
+
+- Since it is auto-generated based on hues, the number of steps is predefined to 15.
+- Currently only LCH color palettes are generated, but we plan to add OKLCH support for HDR screens supporting P3 gamut,
+  and supported browsers.
+- The `generateTailwindColorPreset` function is not yet implemented.

@@ -40,6 +40,9 @@
     "test": "bun test",
     "typecheck": "tsc --noEmit"
   },
+  "dependencies": {
+    "deepmerge": "^4.3.1"
+  },
   "devDependencies": {
     "@pandacss/types": "^0.40.1",
     "@types/jest": "^29.5.12",

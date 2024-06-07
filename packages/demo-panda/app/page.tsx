@@ -23,7 +23,7 @@ export default function Home() {
         minH: '100%',
         p: 'size.4',
         border: '1px solid',
-        borderColor: 'blue.5',
+        borderColor: 'blueberry.11',
         borderWidth: 'size.5',
         borderRadius: 'conditional.5',
         m: 'relative.10',

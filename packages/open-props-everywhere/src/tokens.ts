@@ -1,5 +1,5 @@
 import { opConfig } from './config'
-import type { TokenConfig } from './types'
+import type { TokenConfig, TokenConfigRecordValue } from './types'
 import { cssvar, cssvarSteps } from './utils'
 
 // It's tricky to generate the tokens out of what `open-props` npm package provides, so var names are hardcoded.
@@ -77,12 +77,14 @@ const screenSizes: Array<TokenConfig<string>> = [
   { name: 'xxl', value: '1920px' },
 ]
 
-const colors: Array<TokenConfig> = colorNames.map((name): TokenConfig => {
-  return {
-    name,
-    value: cssvarSteps(opConfig.steps.colors, name),
-  }
-})
+const colors: Array<TokenConfig<TokenConfigRecordValue>> = colorNames.map(
+  (name): TokenConfig<TokenConfigRecordValue> => {
+    return {
+      name,
+      value: cssvarSteps(opConfig.steps.colors, name) as TokenConfigRecordValue,
+    }
+  },
+)
 
 const gradients: Array<TokenConfig> = [{ name: 'gradient', value: cssvarSteps(opConfig.steps.gradients, 'gradient') }]
 

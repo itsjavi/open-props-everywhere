@@ -1,5 +1,5 @@
 import { defineConfig } from '@pandacss/dev'
-import { openPropsPandaPreset } from 'open-props-everywhere'
+import { generatePandaColorPreset, openPropsPandaPreset } from 'open-props-everywhere'
 
 export default defineConfig({
   // Whether to use css reset
@@ -20,7 +20,13 @@ export default defineConfig({
   outdir: 'styled-system',
 
   // The presets to use
-  presets: ['@pandacss/preset-base', openPropsPandaPreset],
+  presets: [
+    '@pandacss/preset-base',
+    openPropsPandaPreset,
+    generatePandaColorPreset({
+      blueberry: 252,
+    }),
+  ],
 
   // framework
   jsxFramework: 'react',

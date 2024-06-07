@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className={css({ display: 'flex', minH: 'full-vh' })}>{children}</div>
+        <div className={css({ display: 'flex', minH: 'full-vh', bg: 'gray.2', color: 'gray.13' })}>{children}</div>
       </body>
     </html>
   )

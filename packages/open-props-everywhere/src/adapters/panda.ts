@@ -4,41 +4,14 @@
  * @module
  */
 
-import type { Preset, Recursive, Token } from '@pandacss/types'
+import type { Preset } from '@pandacss/types'
 import { openPropsTokens } from '../tokens'
-import type { TokenConfig, TokenConfigValue } from '../types'
-
-function transformTokenConfigValue(tokenConfigValue: TokenConfigValue): Token<string> | Recursive<Token<string>> {
-  if (typeof tokenConfigValue === 'string') {
-    return {
-      value: tokenConfigValue as string,
-    }
-  }
-  return Object.fromEntries(
-    Object.entries(tokenConfigValue).map(([key, value]) => [
-      key,
-      {
-        value,
-      },
-    ]),
-  )
-}
-
-function transformTokenConfigs(tokenConfigs: TokenConfig[]): Recursive<Token<string>> {
-  return Object.fromEntries(
-    tokenConfigs.map((tokenConfig) => {
-      return [tokenConfig.name, transformTokenConfigValue(tokenConfig.value)]
-    }),
-  )
-}
-
-function transformPlainTokenConfigs(tokenConfigs: TokenConfig<string>[]): Record<string, string> {
-  return Object.fromEntries(
-    tokenConfigs.map((tokenConfig) => {
-      return [tokenConfig.name, tokenConfig.value]
-    }),
-  )
-}
+import {
+  transformPlainTokenConfigs,
+  transformTokenConfigs,
+  transformTokenConfigsToColors,
+  transformTokenConfigsToSemanticColors,
+} from './panda-utils'
 
 /**
  * PandaCSS Open Props Preset
@@ -69,9 +42,12 @@ export const openPropsPandaPreset: Preset = {
   theme: {
     extend: {
       breakpoints: transformPlainTokenConfigs(openPropsTokens.screenSizes),
+      semanticTokens: {
+        colors: transformTokenConfigsToSemanticColors(openPropsTokens.colors),
+      },
       tokens: {
         assets: transformTokenConfigs(openPropsTokens.noises),
-        colors: transformTokenConfigs(openPropsTokens.colors),
+        colors: transformTokenConfigsToColors(openPropsTokens.colors),
         borderWidths: transformTokenConfigs(openPropsTokens.borderWidths),
         animations: transformTokenConfigs(openPropsTokens.animations),
         easings: transformTokenConfigs(openPropsTokens.easings),

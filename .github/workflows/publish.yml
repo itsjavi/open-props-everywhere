@@ -46,6 +46,8 @@ jobs:
           cd packages/open-props-everywhere
           npm version ${{ github.event.inputs.version }}
           cd -
+          git add packages/*/package.json
+          git commit -m "Bump version"
 
       - name: "Publish"
         env:

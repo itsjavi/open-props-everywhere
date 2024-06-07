@@ -1,6 +1,22 @@
 {
-  "name": "@itsjavi/open-props-everywhere",
+  "name": "open-props-everywhere",
   "version": "0.1.4",
+  "description": "Presets to integrate Open Props with PandaCSS and TailwindCSS",
+  "keywords": [
+    "open-props",
+    "pandacss",
+    "tailwind",
+    "tailwindcss",
+    "css",
+    "css-in-js"
+  ],
+  "homepage": "https://github.com/itsjavi/open-props-everywhere",
+  "bugs": "https://github.com/itsjavi/open-props-everywhere/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itsjavi/open-props-everywhere.git"
+  },
+  "license": "MIT",
   "type": "module",
   "exports": {
     ".": {
@@ -20,11 +36,11 @@
     "biome:fix": "biome check --max-diagnostics 50 --write .",
     "biome:lint": "biome lint . --max-diagnostics 50",
     "build": "rm -rf dist && parcel build --no-cache && pnpm publint",
-    "prepublishOnly": "pnpm build",
     "format": "pnpm biome:fix && sort-package-json",
     "postinstall": "sort-package-json",
     "lint": "typelint && pnpm typecheck && pnpm biome:lint",
     "lint:fix": "pnpm format",
+    "prepublishOnly": "pnpm build",
     "pub": "echo 'Not implemented yet'",
     "test": "bun test",
     "typecheck": "tsc --noEmit",

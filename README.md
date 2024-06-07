@@ -1,4 +1,4 @@
-# @itsjavi/open-props-everywhere
+# open-props-everywhere
 
 A library to integrate Open Props CSS variables with PandaCSS and TailwindCSS, providing a unified design token system
 for your projects.
@@ -7,11 +7,11 @@ for your projects.
 
 | Package Manager | Command                                       |
 | --------------- | --------------------------------------------- |
-| pnpm            | `pnpm add @itsjavi/open-props-everywhere`     |
-| yarn            | `yarn add @itsjavi/open-props-everywhere`     |
-| bun             | `bun add @itsjavi/open-props-everywhere`      |
-| deno            | `deno add npm:@itsjavi/open-props-everywhere` |
-| npm             | `npm i @itsjavi/open-props-everywhere`        |
+| pnpm            | `pnpm add open-props-everywhere`     |
+| yarn            | `yarn add open-props-everywhere`     |
+| bun             | `bun add open-props-everywhere`      |
+| deno            | `deno add npm:open-props-everywhere` |
+| npm             | `npm i open-props-everywhere`        |
 
 ## Usage
 
@@ -29,7 +29,7 @@ This is an example with the recommended configuration:
 ```js
 // panda.config.js
 import { defineConfig } from "@pandacss/dev";
-import { openPropsPreset } from "@itsjavi/open-props-everywhere/panda";
+import { openPropsPreset } from "open-props-everywhere/panda";
 
 export default defineConfig({
   preflight: true,
@@ -90,7 +90,7 @@ This is an example with the recommended configuration:
 
 ```js
 // tailwind.config.js
-import { openPropsPreset } from "@itsjavi/open-props-everywhere/tailwind";
+import { openPropsPreset } from "open-props-everywhere/tailwind";
 
 /** @type {import('tailwindcss').Config} */
 export default {

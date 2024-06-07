@@ -14,7 +14,7 @@
   "bugs": "https://github.com/itsjavi/open-props-everywhere/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/itsjavi/open-props-everywhere.git"
+    "url": "git+https://github.com/itsjavi/open-props-everywhere.git"
   },
   "license": "MIT",
   "type": "module",

@@ -1,7 +1,6 @@
 name: Test
 
 env:
-  NODE_VERSION: 20.14.0
   PNPM_VERSION: 9.2.0
 
 on:

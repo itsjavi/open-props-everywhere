@@ -1,7 +1,6 @@
 name: Publish
 
 env:
-  NODE_VERSION: 20.14.0
   PNPM_VERSION: 9.2.0
 
 on:
@@ -20,6 +19,8 @@ on:
 concurrency:
   group: publish-${{ github.ref }}
   cancel-in-progress: false
+
+# see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
 
 jobs:
   publish:
@@ -43,10 +44,9 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
           npm version ${{ github.event.inputs.version }}
-          git push origin main
+          git push origin main --follow-tags
 
-      - name: Publish package
+      - run: npm ci
+      - run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        run: |
-          npm publish

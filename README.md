@@ -7,6 +7,7 @@ Features:
 
 - Ready to use PandaCSS theme presets. TailwindCSS support coming soon.
 - Automatic dark mode support, thanks to the semantic color palettes.
+- Create custom Open Props-like palettes, using `generatePandaColorPreset`.
 - It can be used together with `postcss-jit-props` to optimize the final CSS.
 - A more convenient way to access Open Props tokens in your projects, via `openPropsTokens`.
 - A more intuitive token and token value naming, avoiding confusion with real integers

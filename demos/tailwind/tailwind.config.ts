@@ -1,3 +1,4 @@
+import { openPropsTailwindPreset } from 'open-props-everywhere'
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
@@ -7,6 +8,7 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './lib/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  presets: [openPropsTailwindPreset],
   theme: {
     extend: {
       backgroundImage: {

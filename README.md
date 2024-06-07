@@ -5,13 +5,21 @@ for your projects.
 
 ## Installation
 
-| Package Manager | Command                                       |
-| --------------- | --------------------------------------------- |
-| pnpm            | `pnpm add open-props-everywhere`     |
-| yarn            | `yarn add open-props-everywhere`     |
-| bun             | `bun add open-props-everywhere`      |
-| deno            | `deno add npm:open-props-everywhere` |
-| npm             | `npm i open-props-everywhere`        |
+In your PandaCSS or TailwindCSS project, install the `open-props-everywhere` package:
+
+| Package Manager | Command                                 |
+| --------------- | --------------------------------------- |
+| pnpm            | `pnpm add -D open-props-everywhere`     |
+| yarn            | `yarn add -D open-props-everywhere`     |
+| bun             | `bun add -D open-props-everywhere`      |
+| deno            | `deno add -D npm:open-props-everywhere` |
+| npm             | `npm i -D open-props-everywhere`        |
+
+You also need to install the following dependencies, e.g. with pnpm:
+
+```sh
+pnpm add -D autoprefixer postcss-import postcss-jit-props open-props
+```
 
 ## Usage
 
@@ -29,11 +37,11 @@ This is an example with the recommended configuration:
 ```js
 // panda.config.js
 import { defineConfig } from "@pandacss/dev";
-import { openPropsPreset } from "open-props-everywhere/panda";
+import { openPropsPandaPreset } from "open-props-everywhere";
 
 export default defineConfig({
   preflight: true,
-  presets: ["@pandacss/preset-base", openPropsPreset],
+  presets: ["@pandacss/preset-base", openPropsPandaPreset],
 });
 ```
 
@@ -45,17 +53,20 @@ With `postcss-jit-props` you can also optimize the final CSS by removing unused 
 Remember to add the plugin after the PandaCSS one.
 
 ```js
-// postcss.config.cjs
-const postcssjitprops = require("postcss-jit-props");
-const allOpenProps = require("open-props");
+// postcss.config.mjs
+import allOpenProps from "open-props";
 
-module.exports = {
+/** @type {import('postcss-load-config').Config} */
+const config = {
   plugins: [
+    "postcss-import",
     "@pandacss/dev/postcss",
-    postcssjitprops(allOpenProps),
+    ["postcss-jit-props", allOpenProps],
     "autoprefixer",
   ],
 };
+
+export default config;
 ```
 
 #### PandaCSS Example
@@ -90,12 +101,12 @@ This is an example with the recommended configuration:
 
 ```js
 // tailwind.config.js
-import { openPropsPreset } from "open-props-everywhere/tailwind";
+import { openPropsTailwindPreset } from "open-props-everywhere";
 
 /** @type {import('tailwindcss').Config} */
 export default {
   preflight: true,
-  presets: [openPropsPreset],
+  presets: [openPropsTailwindPreset],
 };
 ```
 
@@ -107,18 +118,20 @@ With `postcss-jit-props` you can also optimize the final CSS by removing unused 
 Remember to add the plugin after the TailwindCSS one.
 
 ```js
-// postcss.config.cjs
-const postcssjitprops = require("postcss-jit-props");
-const allOpenProps = require("open-props");
+// postcss.config.mjs
+import allOpenProps from "open-props";
 
-module.exports = {
+/** @type {import('postcss-load-config').Config} */
+const config = {
   plugins: [
     "postcss-import",
     "tailwindcss",
-    postcssjitprops(allOpenProps),
+    ["postcss-jit-props", allOpenProps],
     "autoprefixer",
   ],
 };
+
+export default config;
 ```
 
 #### TailwindCSS Example

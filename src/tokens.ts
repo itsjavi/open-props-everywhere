@@ -67,7 +67,7 @@ const easingNames = [
   // 'ease-squish',
 ] as const
 
-const screenSizes: Array<TokenConfig> = [
+const screenSizes: Array<TokenConfig<string>> = [
   { name: 'xxs', value: '240px' },
   { name: 'xs', value: '360px' },
   { name: 'sm', value: '480px' },
@@ -84,15 +84,15 @@ const colors: Array<TokenConfig> = colorNames.map((name): TokenConfig => {
   }
 })
 
-const gradients: Array<TokenConfig> = [{ name: 'DEFAULT', value: cssvarSteps(opConfig.steps.gradients, 'gradient') }]
+const gradients: Array<TokenConfig> = [{ name: 'g', value: cssvarSteps(opConfig.steps.gradients, 'gradient') }]
 
 const noises: Array<TokenConfig> = [
-  { name: 'DEFAULT', value: cssvarSteps(opConfig.steps.noise, 'noise') },
-  { name: 'filter', value: cssvarSteps(opConfig.steps.noiseFilter, 'noise-filter') },
+  { name: 'noise', value: cssvarSteps(opConfig.steps.noise, 'noise') },
+  { name: 'noiseFilter', value: cssvarSteps(opConfig.steps.noiseFilter, 'noise-filter') },
 ]
 
 const shadows: Array<TokenConfig> = [
-  { name: 'DEFAULT', value: cssvarSteps(opConfig.steps.shadow, 'shadow') },
+  { name: 'outer', value: cssvarSteps(opConfig.steps.shadow, 'shadow') },
   { name: 'inner', value: cssvarSteps(opConfig.steps.innerShadow, 'inner-shadow') },
 ]
 
@@ -126,49 +126,52 @@ const fontFamilies: Array<TokenConfig> = [
 ]
 
 const fontSizes: Array<TokenConfig> = [
-  { name: 'DEFAULT', value: cssvarSteps(opConfig.steps.fontSize, 'font-size') },
+  { name: 's', value: cssvarSteps(opConfig.steps.fontSize, 'font-size') },
   { name: 'fluid', value: cssvarSteps(opConfig.steps.fontSizeFluid, 'font-size-fluid') },
 ]
 
-const fontWeight: Array<TokenConfig> = [
-  { name: 'DEFAULT', value: cssvarSteps(opConfig.steps.fontWeight, 'font-weight') },
-]
+const fontWeight: Array<TokenConfig> = [{ name: 'w', value: cssvarSteps(opConfig.steps.fontWeight, 'font-weight') }]
 const fontLetterspacing: Array<TokenConfig> = [
-  { name: 'DEFAULT', value: cssvarSteps(opConfig.steps.fontLetterspacing, 'font-letterspacing') },
+  // { name: 'DEFAULT', value: cssvarSteps(opConfig.steps.fontLetterspacing, 'font-letterspacing') },
+  { name: 'sp', value: cssvarSteps(opConfig.steps.fontLetterspacing, 'font-letterspacing') },
 ]
 
 const fontLineheight: Array<TokenConfig> = [
-  { name: 'DEFAULT', value: cssvarSteps(opConfig.steps.fontLineheight, 'font-lineheight') },
+  // { name: 'DEFAULT', value: cssvarSteps(opConfig.steps.fontLineheight, 'font-lineheight') },
+  { name: 'h', value: cssvarSteps(opConfig.steps.fontLineheight, 'font-lineheight') },
+]
+
+const spacings: Array<TokenConfig> = [
+  { name: 's', value: cssvarSteps(opConfig.steps.sizesRem, 'size') },
+  { name: 'px', value: cssvarSteps(opConfig.steps.sizesPx, 'size-px') },
+  { name: 'fluid', value: cssvarSteps(opConfig.steps.sizesFluid, 'size-fluid') },
+  { name: 'ch', value: cssvarSteps(opConfig.steps.sizesRelativeChar, 'size-relative') },
 ]
 
 const sizes: Array<TokenConfig> = [
-  { name: 'DEFAULT', value: cssvarSteps(opConfig.steps.sizesRem, 'size') },
-  { name: 'px', value: cssvarSteps(opConfig.steps.sizesPx, 'size-px') },
-  { name: 'fluid', value: cssvarSteps(opConfig.steps.sizesFluid, 'size-fluid') },
+  ...spacings,
+  // containers:
   { name: 'prose', value: cssvarSteps(opConfig.steps.sizesProseContainer, 'size-content') },
   { name: 'heading', value: cssvarSteps(opConfig.steps.sizesHeadlineContainer, 'size-header') },
-  { name: 'ch', value: cssvarSteps(opConfig.steps.sizesRelativeChar, 'size-relative') },
   {
     name: 'screen',
     value: Object.fromEntries(screenSizes.map((size) => [size.name, size.value])) as TokenConfig['value'],
   },
 ]
 
-const borderSizes: Array<TokenConfig> = [
-  { name: 'DEFAULT', value: cssvarSteps(opConfig.steps.borderSizes, 'border-size') },
-]
+const borderWidths: Array<TokenConfig> = [{ name: 'w', value: cssvarSteps(opConfig.steps.borderSizes, 'border-size') }]
 
 const radius: Array<TokenConfig> = [
-  { name: 'round', value: cssvar('radius-round') },
-  { name: 'DEFAULT', value: cssvarSteps(opConfig.steps.radii, 'radius') },
+  { name: 'full', value: cssvar('radius-round') },
+  { name: 'r', value: cssvarSteps(opConfig.steps.radii, 'radius') },
   { name: 'sketch', value: cssvarSteps(opConfig.steps.radii, 'radius-drawn') },
   { name: 'blob', value: cssvarSteps(opConfig.steps.radiiBlob, 'radius-blob') },
   { name: 'fluid', value: cssvarSteps(opConfig.steps.radii, 'radius-conditional') },
 ]
 
 const zIndices: Array<TokenConfig> = [
-  { name: 'important', value: cssvar('layer-important') },
-  { name: 'DEFAULT', value: cssvarSteps(opConfig.steps.zIndices, 'layer') },
+  { name: 'zmax', value: cssvar('layer-important') },
+  { name: 'z', value: cssvarSteps(opConfig.steps.zIndices, 'layer') },
 ]
 
 export const openPropsTokens = {
@@ -185,7 +188,9 @@ export const openPropsTokens = {
   fontLetterspacing,
   fontLineheight,
   sizes,
-  borderSizes,
+  spacings,
+  borderWidths,
   radius,
   zIndices,
+  screenSizes,
 }

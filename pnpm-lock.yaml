@@ -42,7 +42,7 @@ importers:
   demos/panda:
     dependencies:
       next:
-        specifier: 14.2.3
+        specifier: ^14.2.3
         version: 14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       open-props-everywhere:
         specifier: workspace:*
@@ -82,7 +82,7 @@ importers:
   demos/tailwind:
     dependencies:
       next:
-        specifier: 14.2.3
+        specifier: ^14.2.3
         version: 14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       open-props-everywhere:
         specifier: workspace:*
@@ -103,9 +103,15 @@ importers:
       '@types/react-dom':
         specifier: ^18.3.0
         version: 18.3.0
+      open-props:
+        specifier: ^1.7.4
+        version: 1.7.4
       postcss:
         specifier: ^8.4.38
         version: 8.4.38
+      postcss-jit-props:
+        specifier: ^1.0.14
+        version: 1.0.14(postcss@8.4.38)
       tailwindcss:
         specifier: ^3.4.4
         version: 3.4.4

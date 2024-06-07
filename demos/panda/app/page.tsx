@@ -1,9 +1,31 @@
+import { css } from '@/styled-system/css'
 import Image from 'next/image'
-import styles from './page.module.css'
+
+const styles = {
+  description: '',
+  code: '',
+  vercelLogo: '',
+  center: '',
+  logo: '',
+  grid: '',
+  card: '',
+}
 
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <main
+      className={css({
+        display: 'flex',
+        flexDir: 'column',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        p: 's.4',
+        minH: '100vh',
+        border: '1px solid',
+        borderColor: 'blue.5',
+        borderWidth: 'w.4',
+      })}
+    >
       <div className={styles.description}>
         <p>
           Get started by editing&nbsp;
@@ -15,14 +37,27 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{' '}
-            <Image src="/vercel.svg" alt="Vercel Logo" className={styles.vercelLogo} width={100} height={24} priority />
+            By <Image src="/vercel.svg" alt="Vercel Logo" width={100} height={24} priority />
           </a>
         </div>
       </div>
 
       <div className={styles.center}>
-        <Image className={styles.logo} src="/next.svg" alt="Next.js Logo" width={180} height={37} priority />
+        <Image
+          className={css({
+            opacity: 0.5,
+            animation: 'fade-in, shake-z forwards',
+            animationDuration: '1s',
+            animationIterationCount: 'infinite',
+            animationTimingFunction: 'ease-in-out',
+            animationDirection: 'alternate',
+          })}
+          src="/next.svg"
+          alt="Next.js Logo"
+          width={180}
+          height={37}
+          priority
+        />
       </div>
 
       <div className={styles.grid}>

@@ -1,10 +1,10 @@
 export type CssVarString = `var(--${string})`
 export type DefaultTokenName = 'DEFAULT'
 
-export type TokenConfig = {
+export type TokenConfigValue = CssVarString | string | Record<DefaultTokenName | string | number, CssVarString>
+export type TokenConfig<V extends TokenConfigValue = TokenConfigValue> = {
   name: string
-  value: CssVarString | string | Record<DefaultTokenName | string | number, CssVarString>
-  // defaultValue?: CssVarString
+  value: V
 }
 
 export type OpenPropsStepConfig = Readonly<[startIndex: number, numLevels: number]>

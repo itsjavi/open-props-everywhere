@@ -20,7 +20,7 @@ export function cssvar(name: string): CssVarString {
   return `var(--${name})`
 }
 
-export function cssvarSteps(stepConfig: OpenPropsStepConfig, name: string): TokenConfig['value'] {
+export function cssvarSteps(stepConfig: OpenPropsStepConfig, name: string, keyPrefix = ''): TokenConfig['value'] {
   const [start, finalStep] = stepConfig
   const values: CssVarString[] = []
 
@@ -34,5 +34,5 @@ export function cssvarSteps(stepConfig: OpenPropsStepConfig, name: string): Toke
     values.push(cssvar(`${name}-${i}`))
   }
 
-  return Object.fromEntries(values.map((value, i) => [i, value]))
+  return Object.fromEntries(values.map((value, i) => [`${keyPrefix}${i + 1}`, value]))
 }

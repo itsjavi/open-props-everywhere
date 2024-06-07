@@ -1,6 +1,6 @@
 {
   "name": "@itsjavi/open-props-everywhere",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "type": "module",
   "exports": {
     ".": {
@@ -19,7 +19,8 @@
   "scripts": {
     "biome:fix": "biome check --max-diagnostics 50 --write .",
     "biome:lint": "biome lint . --max-diagnostics 50",
-    "build": "parcel build --no-cache && pnpm publint",
+    "build": "rm -rf dist && parcel build --no-cache && pnpm publint",
+    "prepublishOnly": "pnpm build",
     "format": "pnpm biome:fix && sort-package-json",
     "postinstall": "sort-package-json",
     "lint": "typelint && pnpm typecheck && pnpm biome:lint",

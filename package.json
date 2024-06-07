@@ -14,7 +14,7 @@
     "postinstall": "sort-package-json",
     "lint": "pnpm typecheck && pnpm biome:lint",
     "lint:fix": "pnpm format",
-    "pub": "pnpm dlx jsr publish",
+    "pub": "echo 'Not implemented yet'",
     "test": "bun test",
     "typecheck": "tsc --noEmit",
     "ver": "npm version",

@@ -1,6 +1,6 @@
 {
   "name": "open-props-everywhere",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Presets to integrate Open Props with PandaCSS and TailwindCSS",
   "keywords": [
     "open-props",

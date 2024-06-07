@@ -3,18 +3,6 @@
 A library to integrate Open Props CSS variables with PandaCSS and TailwindCSS, providing a unified design token system
 for your projects.
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-  - [With PandaCSS](#with-pandacss)
-  - [With TailwindCSS](#with-tailwindcss)
-- [Examples](#examples)
-  - [PandaCSS Example](#pandacss-example)
-  - [TailwindCSS Example](#tailwindcss-example)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Installation
 
 | Package Manager | Command                                           |
@@ -70,6 +58,30 @@ module.exports = {
 };
 ```
 
+#### PandaCSS Example
+
+```jsx
+import { styled } from '@/styled-system/jsx'
+
+export const Card = ({children}) => (
+  <styled.div
+    css={{
+      borderRadius: '2',
+      padding: 'fluid-3',
+      boxShadow: 'shadow-2',
+      _hover: {
+        boxShadow: 'shadow-3'
+      }
+      _motionOk: {
+        animation: 'fade-in'
+      }
+    }}
+  >
+    {children}
+  </styled.div>
+)
+```
+
 ### With TailwindCSS
 
 Integrate Open Props with TailwindCSS through this preset to use the design tokens in your styles.
@@ -109,33 +121,7 @@ module.exports = {
 };
 ```
 
-## Examples
-
-### PandaCSS Example
-
-```jsx
-import { styled } from '@/styled-system/jsx'
-
-export const Card = ({children}) => (
-  <styled.div
-    css={{
-      borderRadius: '2',
-      padding: 'fluid-3',
-      boxShadow: 'shadow-2',
-      _hover: {
-        boxShadow: 'shadow-3'
-      }
-      _motionOk: {
-        animation: 'fade-in'
-      }
-    }}
-  >
-    {children}
-  </styled.div>
-)
-```
-
-### TailwindCSS Example
+#### TailwindCSS Example
 
 ```jsx
 export const Card = ({ children }) => (

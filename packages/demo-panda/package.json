@@ -7,7 +7,8 @@
     "demo:build": "next build",
     "demo:start": "next start",
     "dev": "pnpm open && PORT=3011 next dev",
-    "open": "sleep 3 && open http://localhost:3011 &"
+    "open": "sleep 3 && open http://localhost:3011 &",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "next": "^14.2.3",

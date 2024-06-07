@@ -5,13 +5,13 @@ for your projects.
 
 ## Installation
 
-| Package Manager | Command                                           |
-| --------------- | ------------------------------------------------- |
-| deno            | `deno add @itsjavi/open-props-everywhere`         |
-| bun             | `bunx jsr add @itsjavi/open-props-everywhere`     |
-| pnpm            | `pnpm dlx jsr add @itsjavi/open-props-everywhere` |
-| yarn            | `yarn dlx jsr add @itsjavi/open-props-everywhere` |
-| npm             | `npx jsr add @itsjavi/open-props-everywhere`      |
+| Package Manager | Command                                       |
+| --------------- | --------------------------------------------- |
+| pnpm            | `pnpm add @itsjavi/open-props-everywhere`     |
+| yarn            | `yarn add @itsjavi/open-props-everywhere`     |
+| bun             | `bun add @itsjavi/open-props-everywhere`      |
+| deno            | `deno add npm:@itsjavi/open-props-everywhere` |
+| npm             | `npm i @itsjavi/open-props-everywhere`        |
 
 ## Usage
 

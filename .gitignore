@@ -7,6 +7,10 @@
 coverage/
 .coverage/
 
+# builds
+/build
+/dist
+
 # misc
 .DS_Store
 *.pem
@@ -20,3 +24,4 @@ coverage/
 *.tsbuildinfo
 *~lock.*
 *~lock*
+.parcel-cache/

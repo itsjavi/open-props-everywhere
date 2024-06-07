@@ -11,4 +11,4 @@ import type { Preset } from '@pandacss/types'
 /**
  * PandaCSS Open Props Preset
  */
-export const openPropsPreset: Preset = {}
+export const openPropsPandaPreset: Preset = {}

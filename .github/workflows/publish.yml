@@ -31,4 +31,4 @@ jobs:
         uses: ./.github/actions/quality-check
 
       - name: Publish package
-        run: npx jsr publish
+        run: echo "Not implemented yet."

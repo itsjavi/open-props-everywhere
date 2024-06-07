@@ -11,4 +11,4 @@ import type { Config } from 'tailwindcss'
 /**
  * TailwindCSS Open Props Preset
  */
-export const openPropsPreset: NonNullable<Config['presets']>[number] = {}
+export const openPropsTailwindPreset: NonNullable<Config['presets']>[number] = {}

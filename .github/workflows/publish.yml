@@ -1,8 +1,17 @@
 name: Publish
+
+env:
+  NODE_VERSION: 20.14.0
+  PNPM_VERSION: 9.2.0
+
 on:
   push:
     branches:
       - main
+
+concurrency:
+  group: publish-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   publish:
@@ -14,6 +23,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: "Setup Project"
+        uses: ./.github/actions/setup-project
+
+      - name: "Quality Check"
+        uses: ./.github/actions/quality-check
 
       - name: Publish package
         run: npx jsr publish

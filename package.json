@@ -37,7 +37,7 @@
     "biome:fix": "biome check --max-diagnostics 50 --write .",
     "biome:lint": "biome lint . --max-diagnostics 50",
     "build": "rm -rf dist && parcel build --no-cache && pnpm publint",
-    "build:dev": "parcel build --no-cache && pnpm -r prepare && pnpm -r generate",
+    "build:dev": "parcel build --no-cache && pnpm -r panda prepare && pnpm -r panda generate",
     "demo": "pnpm -r dev",
     "format": "pnpm biome:fix && sort-package-json",
     "postinstall": "sort-package-json",

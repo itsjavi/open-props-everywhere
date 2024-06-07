@@ -5,9 +5,8 @@
   "scripts": {
     "dev": "pnpm open && PORT=3011 next dev",
     "open": "sleep 3 && open http://localhost:3011 &",
-    "prepare": "panda codegen",
-    "generate": "panda generate",
-    "build": "next build",
+    "panda": "panda",
+    "build:dev": "next build",
     "start": "next start",
     "lint": "next lint"
   },

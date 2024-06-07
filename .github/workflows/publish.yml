@@ -39,7 +39,6 @@ jobs:
       - name: "Quality Check"
         uses: ./.github/actions/quality-check
 
-      - run: pnpm build
       - name: "Bump version"
         run: |
           git config user.name "GitHub Actions Bot"

@@ -10,6 +10,8 @@
       "dist/",
       "*.json",
       "*.d.ts",
+      "styled-system/",
+      "styled-system-studio/",
       "**/*.js"
     ],
     "ignoreUnknown": true
@@ -44,7 +46,7 @@
   },
   "css": {
     "formatter": {
-      "enabled": true
+      "enabled": false
     }
   },
   "json": {

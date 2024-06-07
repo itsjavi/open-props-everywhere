@@ -36,15 +36,14 @@
     "biome:fix": "biome check --max-diagnostics 50 --write .",
     "biome:lint": "biome lint . --max-diagnostics 50",
     "build": "rm -rf dist && parcel build --no-cache && pnpm publint",
+    "demo": "pnpm -r dev",
     "format": "pnpm biome:fix && sort-package-json",
     "postinstall": "sort-package-json",
     "lint": "pnpm typecheck && pnpm biome:lint",
     "lint:fix": "pnpm format",
     "prepublishOnly": "pnpm build",
-    "pub": "echo 'Not implemented yet'",
     "test": "bun test",
     "typecheck": "tsc --noEmit",
-    "ver": "npm version",
     "watch": "parcel watch"
   },
   "devDependencies": {

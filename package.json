@@ -9,7 +9,8 @@
     "lint:fix": "pnpm format",
     "pub": "pnpm dlx jsr publish",
     "test": "bun test",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "ver": "npm version"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.0",

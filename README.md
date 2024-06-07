@@ -1,7 +1,7 @@
 # open-props-everywhere
 
-A library to integrate Open Props CSS variables with PandaCSS and TailwindCSS, providing a unified design token system
-for your projects.
+A library to integrate [Open Props](https://open-props.style) CSS variables with [PandaCSS](https://panda-css.com/) 
+and [TailwindCSS](https://tailwindcss.com/), providing a unified design token system for your projects.
 
 ## Installation
 
@@ -62,7 +62,7 @@ const config = {
     "postcss-import",
     "@pandacss/dev/postcss",
     ["postcss-jit-props", allOpenProps],
-    "autoprefixer",
+    "autoprefixer", // or postcss-preset-env
   ],
 };
 
@@ -127,7 +127,7 @@ const config = {
     "postcss-import",
     "tailwindcss",
     ["postcss-jit-props", allOpenProps],
-    "autoprefixer",
+    "autoprefixer", // or postcss-preset-env
   ],
 };
 

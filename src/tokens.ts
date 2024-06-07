@@ -5,7 +5,7 @@ import { cssvar, cssvarSteps } from './utils'
 // It's tricky to generate the tokens out of what `open-props` npm package provides, so var names are hardcoded.
 // Reference: https://open-props.style/
 
-export const colorNames = [
+const colorNames = [
   'gray',
   'stone',
   'red',
@@ -27,7 +27,7 @@ export const colorNames = [
   'jungle',
 ] as const
 
-export const animationNames = [
+const animationNames = [
   'fade-in',
   'fade-out',
   'fade-in-bloom',
@@ -51,7 +51,7 @@ export const animationNames = [
   'pulse',
 ] as const
 
-export const easingNames = [
+const easingNames = [
   'ease',
   'ease-in',
   'ease-out',
@@ -67,7 +67,7 @@ export const easingNames = [
   // 'ease-squish',
 ] as const
 
-export const screenSizes: Array<TokenConfig> = [
+const screenSizes: Array<TokenConfig> = [
   { name: 'xxs', value: '240px' },
   { name: 'xs', value: '360px' },
   { name: 'sm', value: '480px' },
@@ -77,35 +77,33 @@ export const screenSizes: Array<TokenConfig> = [
   { name: 'xxl', value: '1920px' },
 ]
 
-export const colors: Array<TokenConfig> = colorNames.map((name): TokenConfig => {
+const colors: Array<TokenConfig> = colorNames.map((name): TokenConfig => {
   return {
     name,
     value: cssvarSteps(opConfig.steps.colors, name),
   }
 })
 
-export const gradients: Array<TokenConfig> = [
-  { name: 'DEFAULT', value: cssvarSteps(opConfig.steps.gradients, 'gradient') },
-]
+const gradients: Array<TokenConfig> = [{ name: 'DEFAULT', value: cssvarSteps(opConfig.steps.gradients, 'gradient') }]
 
-export const noises: Array<TokenConfig> = [
+const noises: Array<TokenConfig> = [
   { name: 'DEFAULT', value: cssvarSteps(opConfig.steps.noise, 'noise') },
   { name: 'filter', value: cssvarSteps(opConfig.steps.noiseFilter, 'noise-filter') },
 ]
 
-export const shadows: Array<TokenConfig> = [
+const shadows: Array<TokenConfig> = [
   { name: 'DEFAULT', value: cssvarSteps(opConfig.steps.shadow, 'shadow') },
   { name: 'inner', value: cssvarSteps(opConfig.steps.innerShadow, 'inner-shadow') },
 ]
 
-export const easings: Array<TokenConfig> = easingNames.map((name): TokenConfig => {
+const easings: Array<TokenConfig> = easingNames.map((name): TokenConfig => {
   return {
     name,
     value: cssvarSteps(opConfig.steps.easings, name),
   }
 })
 
-export const aspectRatios: Array<TokenConfig> = [
+const aspectRatios: Array<TokenConfig> = [
   { name: 'square', value: 'var(--ratio-square)' },
   { name: 'landscape', value: 'var(--ratio-landscape)' },
   { name: 'portrait', value: 'var(--ratio-portrait)' },
@@ -114,36 +112,36 @@ export const aspectRatios: Array<TokenConfig> = [
   { name: 'golden', value: 'var(--ratio-golden)' },
 ]
 
-export const animations: Array<TokenConfig> = animationNames.map((name): TokenConfig => {
+const animations: Array<TokenConfig> = animationNames.map((name): TokenConfig => {
   return {
     name,
     value: `var(--animation-${name})`,
   }
 })
 
-export const fontFamilies: Array<TokenConfig> = [
+const fontFamilies: Array<TokenConfig> = [
   { name: 'sans', value: 'var(--font-sans)' },
   { name: 'serif', value: 'var(--font-serif)' },
   { name: 'mono', value: 'var(--font-mono)' },
 ]
 
-export const fontSizes: Array<TokenConfig> = [
+const fontSizes: Array<TokenConfig> = [
   { name: 'DEFAULT', value: cssvarSteps(opConfig.steps.fontSize, 'font-size') },
   { name: 'fluid', value: cssvarSteps(opConfig.steps.fontSizeFluid, 'font-size-fluid') },
 ]
 
-export const fontWeight: Array<TokenConfig> = [
+const fontWeight: Array<TokenConfig> = [
   { name: 'DEFAULT', value: cssvarSteps(opConfig.steps.fontWeight, 'font-weight') },
 ]
-export const fontLetterspacing: Array<TokenConfig> = [
+const fontLetterspacing: Array<TokenConfig> = [
   { name: 'DEFAULT', value: cssvarSteps(opConfig.steps.fontLetterspacing, 'font-letterspacing') },
 ]
 
-export const fontLineheight: Array<TokenConfig> = [
+const fontLineheight: Array<TokenConfig> = [
   { name: 'DEFAULT', value: cssvarSteps(opConfig.steps.fontLineheight, 'font-lineheight') },
 ]
 
-export const sizes: Array<TokenConfig> = [
+const sizes: Array<TokenConfig> = [
   { name: 'DEFAULT', value: cssvarSteps(opConfig.steps.sizesRem, 'size') },
   { name: 'px', value: cssvarSteps(opConfig.steps.sizesPx, 'size-px') },
   { name: 'fluid', value: cssvarSteps(opConfig.steps.sizesFluid, 'size-fluid') },
@@ -156,11 +154,11 @@ export const sizes: Array<TokenConfig> = [
   },
 ]
 
-export const borderSizes: Array<TokenConfig> = [
+const borderSizes: Array<TokenConfig> = [
   { name: 'DEFAULT', value: cssvarSteps(opConfig.steps.borderSizes, 'border-size') },
 ]
 
-export const radius: Array<TokenConfig> = [
+const radius: Array<TokenConfig> = [
   { name: 'round', value: cssvar('radius-round') },
   { name: 'DEFAULT', value: cssvarSteps(opConfig.steps.radii, 'radius') },
   { name: 'sketch', value: cssvarSteps(opConfig.steps.radii, 'radius-drawn') },
@@ -168,9 +166,26 @@ export const radius: Array<TokenConfig> = [
   { name: 'fluid', value: cssvarSteps(opConfig.steps.radii, 'radius-conditional') },
 ]
 
-export const zIndices: Array<TokenConfig> = [
+const zIndices: Array<TokenConfig> = [
   { name: 'important', value: cssvar('layer-important') },
   { name: 'DEFAULT', value: cssvarSteps(opConfig.steps.zIndices, 'layer') },
 ]
 
-// Media Queries
+export const openPropsTokens = {
+  colors,
+  gradients,
+  noises,
+  shadows,
+  easings,
+  aspectRatios,
+  animations,
+  fontFamilies,
+  fontSizes,
+  fontWeight,
+  fontLetterspacing,
+  fontLineheight,
+  sizes,
+  borderSizes,
+  radius,
+  zIndices,
+}

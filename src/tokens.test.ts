@@ -1,4 +1,4 @@
-import * as tokens from './tokens'
+import { openPropsTokens as tokens } from './tokens'
 
 describe('generated tokens system', () => {
   console.log(JSON.stringify(tokens, null, 2))

@@ -1,7 +1,16 @@
 # open-props-everywhere
 
-A library to integrate [Open Props](https://open-props.style) CSS variables with [PandaCSS](https://panda-css.com/) 
+A library to integrate [Open Props](https://open-props.style) CSS variables with [PandaCSS](https://panda-css.com/)
 and [TailwindCSS](https://tailwindcss.com/), providing a unified design token system for your projects.
+
+Features:
+
+- Ready to use PandaCSS and TailwindCSS theme presets.
+- It can be used together with `postcss-jit-props` to optimize the final CSS.
+- A more convenient way to access Open Props tokens in your projects, via `openPropsTokens`.
+- A more intuitive token and token value naming, avoiding confusion with real integers
+  in PandaCSS, e.g. `borderRadius: "lv.2"` instead of `borderRadius: "2"`. This also improves TypeScript efficiency
+  and IDE code completion.
 
 ## Installation
 
@@ -15,7 +24,7 @@ In your PandaCSS or TailwindCSS project, install the `open-props-everywhere` pac
 | deno            | `deno add -D npm:open-props-everywhere` |
 | npm             | `npm i -D open-props-everywhere`        |
 
-You also need to install the following dependencies, e.g. with pnpm:
+To optimize the final CSS, you'll also need to install the following dependencies, e.g. with pnpm:
 
 ```sh
 pnpm add -D autoprefixer postcss-import postcss-jit-props open-props
@@ -69,28 +78,28 @@ const config = {
 export default config;
 ```
 
-#### PandaCSS Example
+#### PandaCSS + React Example
 
 ```jsx
-import { styled } from '@/styled-system/jsx'
+import { styled } from "@/styled-system/jsx";
 
-export const Card = ({children}) => (
+export const Card = ({ children }) => (
   <styled.div
     css={{
-      borderRadius: '2',
-      padding: 'fluid-3',
-      boxShadow: 'shadow-2',
+      borderRadius: "lv.2",
+      padding: "fluid.3",
+      boxShadow: "lv.2",
       _hover: {
-        boxShadow: 'shadow-3'
-      }
-      _motionOk: {
-        animation: 'fade-in'
-      }
+        boxShadow: "lv.3",
+      },
+      _motionSafe: {
+        animation: "fade-in, shake-z forwards",
+      },
     }}
   >
     {children}
   </styled.div>
-)
+);
 ```
 
 ### With TailwindCSS
@@ -134,11 +143,12 @@ const config = {
 export default config;
 ```
 
-#### TailwindCSS Example
+#### TailwindCSS + React Example
 
 ```jsx
 export const Card = ({ children }) => (
-  <div className="rounded-2 p-fluid-3 shadow-2 hover:shadow-3 motionOk:fade-in">
+  // Note: it isn't currently possible to specify multiple inline animations in TailwindCSS, like in the PandaCSS example
+  <div className="rounded-2 p-fluid-3 shadow-2 hover:shadow-3 motionSafe:fade-in">
     {children}
   </div>
 );

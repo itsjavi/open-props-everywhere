@@ -20,4 +20,3 @@ runs:
         pnpm install -g bun@latest
         pnpm install --frozen-lockfile
         pnpm build
-        pnpm -r panda prepare

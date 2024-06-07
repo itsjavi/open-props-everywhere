@@ -1,0 +1,54 @@
+{
+  "name": "open-props-everywhere",
+  "version": "0.2.0",
+  "description": "Presets to integrate Open Props with PandaCSS and TailwindCSS",
+  "keywords": [
+    "open-props",
+    "pandacss",
+    "tailwind",
+    "tailwindcss",
+    "css",
+    "css-in-js"
+  ],
+  "homepage": "https://github.com/itsjavi/open-props-everywhere",
+  "bugs": "https://github.com/itsjavi/open-props-everywhere/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsjavi/open-props-everywhere.git"
+  },
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "module": "dist/index.js",
+  "source": "src/index.ts",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && parcel build --no-cache && pnpm publint",
+    "dev": "parcel watch",
+    "prepublishOnly": "pnpm build",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@pandacss/types": "^0.40.1",
+    "@types/jest": "^29.5.12",
+    "parcel": "^2.12.0",
+    "publint": "^0.2.8",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.4.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

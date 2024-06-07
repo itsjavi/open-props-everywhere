@@ -1,13 +1,12 @@
 {
-  "name": "tailwind-demo",
+  "name": "demo-tailwind",
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "demo:build": "next build",
+    "demo:start": "next start",
     "dev": "pnpm open && PORT=3012 next dev",
-    "open": "sleep 3 && open http://localhost:3012 &",
-    "build:dev": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "open": "sleep 3 && open http://localhost:3012 &"
   },
   "dependencies": {
     "next": "^14.2.3",

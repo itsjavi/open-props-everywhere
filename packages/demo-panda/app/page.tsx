@@ -19,11 +19,11 @@ export default function Home() {
         flexDir: 'column',
         justifyContent: 'space-between',
         alignItems: 'center',
-        p: 's.4',
-        minH: '100vh',
+        p: 'lv.4',
+        minH: 'full-vh',
         border: '1px solid',
         borderColor: 'blue.5',
-        borderWidth: 'w.4',
+        borderWidth: 'lv.4',
       })}
     >
       <div className={styles.description}>

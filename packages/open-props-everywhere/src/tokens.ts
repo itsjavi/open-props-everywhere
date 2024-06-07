@@ -84,15 +84,17 @@ const colors: Array<TokenConfig> = colorNames.map((name): TokenConfig => {
   }
 })
 
-const gradients: Array<TokenConfig> = [{ name: 'g', value: cssvarSteps(opConfig.steps.gradients, 'gradient') }]
+const gradients: Array<TokenConfig> = [
+  { name: 'DEFAULT', value: cssvarSteps(opConfig.steps.gradients, 'gradient', 'g') },
+]
 
 const noises: Array<TokenConfig> = [
   { name: 'noise', value: cssvarSteps(opConfig.steps.noise, 'noise') },
-  { name: 'noiseFilter', value: cssvarSteps(opConfig.steps.noiseFilter, 'noise-filter') },
+  { name: 'noise-filter', value: cssvarSteps(opConfig.steps.noiseFilter, 'noise-filter') },
 ]
 
 const shadows: Array<TokenConfig> = [
-  { name: 'outer', value: cssvarSteps(opConfig.steps.shadow, 'shadow') },
+  { name: 'lv', value: cssvarSteps(opConfig.steps.shadow, 'shadow') },
   { name: 'inner', value: cssvarSteps(opConfig.steps.innerShadow, 'inner-shadow') },
 ]
 
@@ -126,26 +128,30 @@ const fontFamilies: Array<TokenConfig> = [
 ]
 
 const fontSizes: Array<TokenConfig> = [
-  { name: 's', value: cssvarSteps(opConfig.steps.fontSize, 'font-size') },
+  { name: 'lv', value: cssvarSteps(opConfig.steps.fontSize, 'font-size') },
   { name: 'fluid', value: cssvarSteps(opConfig.steps.fontSizeFluid, 'font-size-fluid') },
 ]
 
-const fontWeight: Array<TokenConfig> = [{ name: 'w', value: cssvarSteps(opConfig.steps.fontWeight, 'font-weight') }]
+const fontWeight: Array<TokenConfig> = [{ name: 'lv', value: cssvarSteps(opConfig.steps.fontWeight, 'font-weight') }]
 const fontLetterspacing: Array<TokenConfig> = [
-  // { name: 'DEFAULT', value: cssvarSteps(opConfig.steps.fontLetterspacing, 'font-letterspacing') },
-  { name: 'sp', value: cssvarSteps(opConfig.steps.fontLetterspacing, 'font-letterspacing') },
+  { name: 'lv', value: cssvarSteps(opConfig.steps.fontLetterspacing, 'font-letterspacing') },
 ]
 
 const fontLineheight: Array<TokenConfig> = [
-  // { name: 'DEFAULT', value: cssvarSteps(opConfig.steps.fontLineheight, 'font-lineheight') },
-  { name: 'h', value: cssvarSteps(opConfig.steps.fontLineheight, 'font-lineheight') },
+  { name: 'lv', value: cssvarSteps(opConfig.steps.fontLineheight, 'font-lineheight') },
 ]
 
 const spacings: Array<TokenConfig> = [
-  { name: 's', value: cssvarSteps(opConfig.steps.sizesRem, 'size') },
+  { name: 'lv', value: cssvarSteps(opConfig.steps.sizesRem, 'size') },
   { name: 'px', value: cssvarSteps(opConfig.steps.sizesPx, 'size-px') },
   { name: 'fluid', value: cssvarSteps(opConfig.steps.sizesFluid, 'size-fluid') },
   { name: 'ch', value: cssvarSteps(opConfig.steps.sizesRelativeChar, 'size-relative') },
+  { name: 'full', value: '100%' },
+  { name: 'full-vw', value: '100vw' },
+  { name: 'full-vh', value: '100vh' },
+  { name: 'min', value: 'min-content' },
+  { name: 'max', value: 'max-content' },
+  { name: 'fit', value: 'fit-content' },
 ]
 
 const sizes: Array<TokenConfig> = [
@@ -159,19 +165,20 @@ const sizes: Array<TokenConfig> = [
   },
 ]
 
-const borderWidths: Array<TokenConfig> = [{ name: 'w', value: cssvarSteps(opConfig.steps.borderSizes, 'border-size') }]
+const borderWidths: Array<TokenConfig> = [{ name: 'lv', value: cssvarSteps(opConfig.steps.borderSizes, 'border-size') }]
 
 const radius: Array<TokenConfig> = [
+  { name: 'lv', value: cssvarSteps(opConfig.steps.radii, 'radius') },
   { name: 'full', value: cssvar('radius-round') },
-  { name: 'r', value: cssvarSteps(opConfig.steps.radii, 'radius') },
   { name: 'sketch', value: cssvarSteps(opConfig.steps.radii, 'radius-drawn') },
   { name: 'blob', value: cssvarSteps(opConfig.steps.radiiBlob, 'radius-blob') },
   { name: 'fluid', value: cssvarSteps(opConfig.steps.radii, 'radius-conditional') },
 ]
 
 const zIndices: Array<TokenConfig> = [
-  { name: 'zmax', value: cssvar('layer-important') },
-  { name: 'z', value: cssvarSteps(opConfig.steps.zIndices, 'layer') },
+  { name: 'layer', value: cssvarSteps(opConfig.steps.zIndices, 'layer') },
+  { name: 'layer-important', value: cssvar('layer-important') },
+  { name: 'layer-hidden', value: '-1' },
 ]
 
 export const openPropsTokens = {

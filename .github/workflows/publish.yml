@@ -43,11 +43,17 @@ jobs:
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
+          cd packages/open-props-everywhere
           npm version ${{ github.event.inputs.version }}
+          cd -
 
       - name: "Publish"
-        run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        run: |
+          cp README.md packages/open-props-everywhere
+          cd packages/open-props-everywhere
+          npm publish --provenance --access public
+          cd -
 
       - run: git push origin main --follow-tags

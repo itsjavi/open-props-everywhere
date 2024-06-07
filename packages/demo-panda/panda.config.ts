@@ -21,4 +21,7 @@ export default defineConfig({
 
   // The presets to use
   presets: ['@pandacss/preset-base', openPropsPandaPreset],
+
+  // framework
+  jsxFramework: 'react',
 })

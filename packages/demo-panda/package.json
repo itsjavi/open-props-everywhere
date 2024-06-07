@@ -1,14 +1,13 @@
 {
-  "name": "panda-demo",
+  "name": "demo-panda",
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "build": "panda prepare && panda generate",
+    "demo:build": "next build",
+    "demo:start": "next start",
     "dev": "pnpm open && PORT=3011 next dev",
-    "open": "sleep 3 && open http://localhost:3011 &",
-    "panda": "panda",
-    "build:dev": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "open": "sleep 3 && open http://localhost:3011 &"
   },
   "dependencies": {
     "next": "^14.2.3",

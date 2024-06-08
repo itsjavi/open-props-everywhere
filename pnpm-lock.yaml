@@ -24,6 +24,31 @@ importers:
         specifier: ^5.4.5
         version: 5.4.5
 
+  packages/color-generator:
+    dependencies:
+      colorjs.io:
+        specifier: ^0.5.0
+        version: 0.5.0
+      open-color:
+        specifier: ^1.9.1
+        version: 1.9.1
+    devDependencies:
+      '@types/jest':
+        specifier: ^29.5.12
+        version: 29.5.12
+      '@types/node':
+        specifier: ^20.14.2
+        version: 20.14.2
+      parcel:
+        specifier: ^2.12.0
+        version: 2.12.0(@swc/helpers@0.5.11)(postcss@8.4.38)(typescript@5.4.5)
+      publint:
+        specifier: ^0.2.8
+        version: 0.2.8
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+
   packages/demo-panda:
     dependencies:
       next:
@@ -100,6 +125,28 @@ importers:
       tailwindcss:
         specifier: ^3.4.4
         version: 3.4.4
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+
+  packages/open-props-dx:
+    dependencies:
+      deepmerge:
+        specifier: ^4.3.1
+        version: 4.3.1
+    devDependencies:
+      '@pandacss/types':
+        specifier: ^0.40.1
+        version: 0.40.1
+      '@types/jest':
+        specifier: ^29.5.12
+        version: 29.5.12
+      parcel:
+        specifier: ^2.12.0
+        version: 2.12.0(@swc/helpers@0.5.11)(postcss@8.4.38)(typescript@5.4.5)
+      publint:
+        specifier: ^0.2.8
+        version: 0.2.8
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -1424,6 +1471,9 @@ packages:
   color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
 
+  colorjs.io@0.5.0:
+    resolution: {integrity: sha512-qekjTiBLM3F/sXKks/ih5aWaHIGu+Ftel0yKEvmpbKvmxpNOhojKgha5uiWEUOqEpRjC1Tq3nJRT7WgdBOxIGg==}
+
   commander@4.1.1:
     resolution: {integrity: sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==}
     engines: {node: '>= 6'}
@@ -2183,6 +2233,9 @@ packages:
 
   once@1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
+
+  open-color@1.9.1:
+    resolution: {integrity: sha512-vCseG/EQ6/RcvxhUcGJiHViOgrtz4x0XbZepXvKik66TMGkvbmjeJrKFyBEx6daG5rNyyd14zYXhz0hZVwQFOw==}
 
   open-props@1.7.4:
     resolution: {integrity: sha512-LfzWOJq4I79GxtpT1/CucxujndqWjAdcC2H6gSJo1TmFGzyGv1VJWJQ1BQnui0/YgTNI+AaG1pEcq5/DCGL8RQ==}
@@ -4534,6 +4587,8 @@ snapshots:
 
   color-name@1.1.4: {}
 
+  colorjs.io@0.5.0: {}
+
   commander@4.1.1: {}
 
   commander@7.2.0: {}
@@ -5229,6 +5284,8 @@ snapshots:
   once@1.4.0:
     dependencies:
       wrappy: 1.0.2
+
+  open-color@1.9.1: {}
 
   open-props@1.7.4: {}
 

@@ -1,5 +1,7 @@
 import type { PandaRecursiveToken } from './types'
 
+// TODO:
+// 1 - replace var(--ease-*) with {easings.ease*}
 export const animations = {
   fadeIn: { value: 'fade-in .5s var(--ease-3)' },
   fadeInBloomLight: { value: 'fade-in-bloom-light 2s var(--ease-3)' },

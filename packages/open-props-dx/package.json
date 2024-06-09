@@ -1,12 +1,10 @@
 {
   "name": "open-props-dx",
   "version": "0.3.1",
-  "description": "Extended version of open-props with extra tokens and better TypeScript support",
+  "description": "Extended version of open-props with extra tokens and better TypeScript support, compatible with PandaCSS tokens.",
   "keywords": [
     "open-props",
     "pandacss",
-    "tailwind",
-    "tailwindcss",
     "css",
     "css-in-js"
   ],

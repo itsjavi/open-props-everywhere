@@ -1,5 +1,7 @@
 import type { PandaRecursiveSemanticToken, PandaRecursiveToken } from './types'
 
+// Ported from https://github.com/facebook/stylex/blob/main/packages/open-props/src/shadows.stylex.js
+
 const shadowStrength = '1%'
 const shadowStrengthDark = '25%'
 
@@ -7,8 +9,6 @@ const shadowColor = '220 3% 15%'
 const shadowColorDark = '220 40% 2%'
 
 const innerHighlight = 'inset 0 -.5px 0 0 #fff2, inset 0 .5px 0 0 #0007'
-
-// ported from https://github.com/argyleink/open-props/blob/main/src/props.shadows.js
 
 export const shadows = {
   innerHighlight: {

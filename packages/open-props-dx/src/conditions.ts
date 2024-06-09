@@ -1,7 +1,9 @@
+import type { Conditions } from '@pandacss/types'
+
 const selector = {
   dark: '.dark &',
   light: '.light &',
-}
+} satisfies Conditions
 
 const media = {
   osDark: '@media (prefers-color-scheme: dark)',
@@ -15,10 +17,10 @@ const media = {
   stylusCapable: '@media (hover: none) and (pointer: fine)',
   mouseCapable: '@media (hover: hover) and (pointer: fine)',
   p3Capable: '@media (dynamic-range: high) or (color-gamut:p3)',
-}
+} satisfies Conditions
 
 const supports = {
   oklchCapable: '@supports (color: oklch(0 0 0))',
-}
+} satisfies Conditions
 
 export const conditions = { selector, media, supports }

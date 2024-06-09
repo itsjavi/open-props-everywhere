@@ -1,3 +1,5 @@
+// TODO: Make it Panda-compatible
+
 export const spacing = {
   size_000: '-.5rem',
   size_00: '-.25rem',

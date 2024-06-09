@@ -2,6 +2,8 @@
 Ported from https://github.com/argyleink/open-props/blob/main/src/props.colors.js
 - generated mostly with https://github.com/argyleink/open-props/blob/main/src/props.colors.src.js
 */
+// TODO: Make it Panda-compatible, incl. semantic colors light/dark
+
 export const Gray = {
   gray_0: '#f8f9fa',
   gray_1: '#f1f3f5',

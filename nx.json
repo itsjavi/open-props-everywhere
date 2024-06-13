@@ -1,0 +1,26 @@
+{
+  "targetDefaults": {
+    "build": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "outputs": ["{projectRoot}/packages/*/dist"]
+    },
+    "dev": {
+      "dependsOn": []
+    },
+    "preview": {
+      "dependsOn": ["^build"]
+    },
+    "lint": {
+      "cache": true,
+      "dependsOn": ["^lint"]
+    },
+    "lint-fix": {
+      "dependsOn": []
+    },
+    "typecheck": {
+      "cache": true,
+      "dependsOn": []
+    }
+  }
+}

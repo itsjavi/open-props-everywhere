@@ -1,10 +1,8 @@
-export const masks = {}
-
 // TODO: port from https://github.com/argyleink/open-props/blob/main/src/props.masks.js
 //      https://github.com/facebook/stylex/blob/main/packages/open-props/src/masksEdges.stylex.js
 // TODO: Make it Panda-compatible
 
-export const masksCornerCuts = {
+const cornerCuts = {
   circles1: 'radial-gradient(1rem at 1rem 1rem,#0000 99%,#000) -1rem -1rem',
   circles2: 'radial-gradient(2rem at 2rem 2rem,#0000 99%,#000) -2rem -2rem',
   circles3: 'radial-gradient(4rem at 4rem 4rem,#0000 99%,#000) -4rem -4rem',
@@ -31,7 +29,7 @@ export const masksCornerCuts = {
     `,
 }
 
-export const masksEdges = {
+const edges = {
   scoopBottom: 'radial-gradient(20px at 50% 100%,#0000 97%,#000) 50% / calc(1.9 * 20px) 100%',
   scoopTop: 'radial-gradient(20px at 50% 0,#0000 97%,#000) 50% / calc(1.9 * 20px) 100%',
   scoopVertical: 'radial-gradient(20px at 50% 20px,#0000 97%,#000) 50% -20px/ calc(1.9 * 20px) 100%',
@@ -106,4 +104,9 @@ export const masksEdges = {
     conic-gradient(from 135deg at top   ,#0000,#000 1deg 90deg,#0000 91deg) top    / calc(2 * 20px) 51% repeat-x,
     conic-gradient(from -45deg at bottom,#0000,#000 1deg 90deg,#0000 91deg) bottom / calc(2 * 20px) 51% repeat-x
   `,
+}
+
+export const masks = {
+  cornerCuts,
+  edges,
 }

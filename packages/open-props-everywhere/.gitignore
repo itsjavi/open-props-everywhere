@@ -25,3 +25,5 @@ dist/
 *~lock.*
 *~lock*
 .parcel-cache/
+
+/colors.js

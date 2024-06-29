@@ -1,8 +1,8 @@
-import type { PandaRecursiveToken } from './types'
+import type { PandaRecursiveToken } from '../types'
 
 export const zIndices = {
   layer_auto: { value: 'auto' },
-  layer_under: { value: '-1' },
+  layer_hidden: { value: '-1' },
   layer_0: { value: '0' },
   layer_1: { value: '1' },
   layer_2: { value: '200' },

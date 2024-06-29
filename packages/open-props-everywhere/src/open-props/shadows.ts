@@ -1,4 +1,4 @@
-import type { PandaRecursiveSemanticToken, PandaRecursiveToken } from './types'
+import type { PandaRecursiveSemanticToken, PandaRecursiveToken } from '../types'
 
 // Ported from https://github.com/facebook/stylex/blob/main/packages/open-props/src/shadows.stylex.js
 
@@ -17,13 +17,13 @@ export const shadows = {
 } satisfies PandaRecursiveToken
 
 export const semanticShadows = {
-  shadow1: {
+  shadow_1: {
     value: {
       base: `0 1px 2px -1px hsl(${shadowColor} / calc(${shadowStrength} + 9%))`,
       _dark: `0 1px 2px -1px hsl(${shadowColorDark} / calc(${shadowStrengthDark} + 9%))`,
     },
   },
-  shadow2: {
+  shadow_2: {
     value: {
       base: `
     0 3px 5px -2px hsl(${shadowColor} / calc(${shadowStrength} + 3%)),
@@ -33,7 +33,7 @@ export const semanticShadows = {
     0 7px 14px -5px hsl(${shadowColorDark} / calc(${shadowStrengthDark} + 5%))`,
     },
   },
-  shadow3: {
+  shadow_3: {
     value: {
       base: `
       0 -1px 3px 0 hsl(${shadowColor} / calc(${shadowStrength} + 2%)),
@@ -49,7 +49,7 @@ export const semanticShadows = {
     0 12px 15px -5px hsl(${shadowColorDark} / calc(${shadowStrengthDark} + 7%))`,
     },
   },
-  shadow4: {
+  shadow_4: {
     value: {
       base: `
       0 -2px 5px 0 hsl(${shadowColor} / calc(${shadowStrength} + 2%)),
@@ -67,7 +67,7 @@ export const semanticShadows = {
     0 16px 16px -2px hsl(${shadowColorDark} / calc(${shadowStrengthDark} + 6%))`,
     },
   },
-  shadow5: {
+  shadow_5: {
     value: {
       base: `
       0 -1px 2px 0 hsl(${shadowColor} / calc(${shadowStrength} + 2%)),
@@ -85,7 +85,7 @@ export const semanticShadows = {
     0 40px 40px -2px hsl(${shadowColorDark} / calc(${shadowStrengthDark} + 7%))`,
     },
   },
-  shadow6: {
+  shadow_6: {
     value: {
       base: `
       0 -1px 2px 0 hsl(${shadowColor} / calc(${shadowStrength} + 2%)),
@@ -105,31 +105,31 @@ export const semanticShadows = {
       0 100px 80px -2px hsl(${shadowColorDark} / calc(${shadowStrengthDark} + 7%))`,
     },
   },
-  inner0: {
+  inner_0: {
     value: {
       base: `inset 0 0 0 1px hsl(${shadowColor} / calc(${shadowStrength} + 9%))`,
       _dark: `inset 0 0 0 1px hsl(${shadowColorDark} / calc(${shadowStrengthDark} + 9%))`,
     },
   },
-  inner1: {
+  inner_1: {
     value: {
       base: `inset 0 1px 2px 0 hsl(${shadowColor} / calc(${shadowStrength} + 9%)), ${innerHighlight}`,
       _dark: `inset 0 1px 2px 0 hsl(${shadowColorDark} / calc(${shadowStrengthDark} + 9%)), ${innerHighlight}`,
     },
   },
-  inner2: {
+  inner_2: {
     value: {
       base: `inset 0 1px 4px 0 hsl(${shadowColor} / calc(${shadowStrength} + 9%)), ${innerHighlight}`,
       _dark: `inset 0 1px 4px 0 hsl(${shadowColorDark} / calc(${shadowStrengthDark} + 9%)), ${innerHighlight}`,
     },
   },
-  inner3: {
+  inner_3: {
     value: {
       base: `inset 0 2px 8px 0 hsl(${shadowColor} / calc(${shadowStrength} + 9%)), ${innerHighlight}`,
       _dark: `inset 0 2px 8px 0 hsl(${shadowColorDark} / calc(${shadowStrengthDark} + 9%)), ${innerHighlight}`,
     },
   },
-  inner4: {
+  inner_4: {
     value: {
       base: `inset 0 2px 14px 0 hsl(${shadowColor} / calc(${shadowStrength} + 9%)), ${innerHighlight}`,
       _dark: `inset 0 2px 14px 0 hsl(${shadowColorDark} / calc(${shadowStrengthDark} + 9%)), ${innerHighlight}`,

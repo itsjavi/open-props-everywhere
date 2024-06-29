@@ -1,25 +1,25 @@
-import type { PandaRecursiveToken } from './types'
+import type { PandaRecursiveToken } from '../types'
 
 export const blurs = {
-  xs: {
+  blur_xs: {
     value: '4px',
   },
-  sm: {
+  blur_sm: {
     value: '8px',
   },
-  md: {
+  blur_md: {
     value: '12px',
   },
-  lg: {
+  blur_lg: {
     value: '16px',
   },
-  xl: {
+  blur_xl: {
     value: '24px',
   },
-  '2xl': {
+  blur_2xl: {
     value: '40px',
   },
-  '3xl': {
+  blur_3xl: {
     value: '64px',
   },
 } satisfies PandaRecursiveToken

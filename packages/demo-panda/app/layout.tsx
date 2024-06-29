@@ -15,10 +15,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const containerClass = css({ display: 'flex', minH: 'full_vh', bg: 'blueberry.2', color: 'gray.13' })
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body className={inter.className}>
-        <div className={css({ display: 'flex', minH: 'full-vh', bg: 'gray.2', color: 'gray.13' })}>{children}</div>
+        <div className={containerClass}>{children}</div>
       </body>
     </html>
   )

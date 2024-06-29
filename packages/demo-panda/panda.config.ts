@@ -24,7 +24,9 @@ export default defineConfig({
     '@pandacss/preset-base',
     openPropsPandaPreset,
     generatePandaColorPreset({
-      blueberry: 252,
+      blueberry: {
+        hue: 252,
+      },
     }),
   ],
 

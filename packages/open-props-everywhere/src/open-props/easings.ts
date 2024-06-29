@@ -1,4 +1,4 @@
-import type { PandaRecursiveToken } from './types'
+import type { PandaRecursiveToken } from '../types'
 
 export const easings = {
   ease_1: { value: 'cubic-bezier(.25, 0, .5, 1)' },

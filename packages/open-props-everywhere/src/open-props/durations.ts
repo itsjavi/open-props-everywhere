@@ -1,4 +1,4 @@
-import type { PandaRecursiveToken } from './types'
+import type { PandaRecursiveToken } from '../types'
 
 export const durations = {
   fastest: {

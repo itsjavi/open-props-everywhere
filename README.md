@@ -1,6 +1,6 @@
 # open-props-everywhere
 
-A library to integrate [Open Props](https://open-props.style) CSS variables with [PandaCSS](https://panda-css.com/)
+A library to integrate [Open Props](https://open-props.style) with [PandaCSS](https://panda-css.com/)
 and [TailwindCSS](https://tailwindcss.com/), providing a unified design token system for your projects.
 
 Features:
@@ -8,11 +8,11 @@ Features:
 - Ready to use PandaCSS theme presets. TailwindCSS support coming soon.
 - Automatic dark mode support, thanks to the semantic color palettes.
 - Create custom Open Props-like palettes, using `generatePandaColorPreset`.
-- It can be used together with `postcss-jit-props` to optimize the final CSS.
-- A more convenient way to access Open Props tokens in your projects, via `openPropsTokens`.
+- A more convenient way to access Open Props tokens in your projects, by importing the `openProps` object.
 - A more intuitive token and token value naming, avoiding confusion with real integers
-  in PandaCSS, e.g. `borderRadius: "radius.2"` instead of `borderRadius: "2"`. This also improves TypeScript efficiency
+  in PandaCSS, e.g. `borderRadius: "radius_2"` instead of `borderRadius: "2"`. This also improves TypeScript efficiency
   and IDE code completion.
+- Thanks to PandaCSS and TailwindCSS bundlers, the final build will only include the used tokens, reducing the final CSS size, compared to including the entire Open Props styles.
 
 ## Installation
 
@@ -26,18 +26,9 @@ In your PandaCSS or TailwindCSS project, install the `open-props-everywhere` pac
 | deno            | `deno add -D npm:open-props-everywhere` |
 | npm             | `npm i -D open-props-everywhere`        |
 
-To optimize the final CSS, you'll also need to install the following dependencies, e.g. with pnpm:
-
-```sh
-pnpm add -D autoprefixer postcss-import postcss-jit-props open-props
-```
-
 ## Usage
 
-This project only provides the presets to integrate Open Props as PandaCSS / TailwindCSS tokens.
-
-Since this guide uses `postcss-jit-props` you won't need to include the Open Props stylesheet in your project, as
-the plugin will generate the necessary CSS for you.
+This project provides the presets to integrate Open Props as PandaCSS / TailwindCSS tokens. The tokens are built-in and there is no need to install the `open-props` package separately.
 
 ### With PandaCSS
 
@@ -58,28 +49,6 @@ export default defineConfig({
 
 You can combine it with any other preset you want.
 
-#### Optimize final CSS
-
-With `postcss-jit-props` you can also optimize the final CSS by removing unused properties.
-Remember to add the plugin after the PandaCSS one.
-
-```js
-// postcss.config.mjs
-import allOpenProps from "open-props";
-
-/** @type {import('postcss-load-config').Config} */
-const config = {
-  plugins: [
-    "postcss-import",
-    "@pandacss/dev/postcss",
-    ["postcss-jit-props", allOpenProps],
-    "autoprefixer", // or postcss-preset-env
-  ],
-};
-
-export default config;
-```
-
 #### PandaCSS + React Example
 
 ```jsx
@@ -88,11 +57,11 @@ import { styled } from "@/styled-system/jsx";
 export const Card = ({ children }) => (
   <styled.div
     css={{
-      borderRadius: "radius.2",
-      padding: "fluid.3",
-      boxShadow: "shadow.2",
+      borderRadius: "radius_2",
+      padding: "fluid_3",
+      boxShadow: "shadow_2",
       _hover: {
-        boxShadow: "shadow.3",
+        boxShadow: "shadow_3",
       },
       _motionSafe: {
         animation: "fade-in, shake-z forwards",
@@ -106,55 +75,7 @@ export const Card = ({ children }) => (
 
 ### With TailwindCSS
 
-Integrate Open Props with TailwindCSS through this preset to use the design tokens in your styles.
-
-This is an example with the recommended configuration:
-
-```js
-// tailwind.config.js
-import { openPropsTailwindPreset } from "open-props-everywhere";
-
-/** @type {import('tailwindcss').Config} */
-export default {
-  preflight: true,
-  presets: [openPropsTailwindPreset],
-};
-```
-
-You can combine it with any other preset you want.
-
-#### Optimize final CSS
-
-With `postcss-jit-props` you can also optimize the final CSS by removing unused properties.
-Remember to add the plugin after the TailwindCSS one.
-
-```js
-// postcss.config.mjs
-import allOpenProps from "open-props";
-
-/** @type {import('postcss-load-config').Config} */
-const config = {
-  plugins: [
-    "postcss-import",
-    "tailwindcss",
-    ["postcss-jit-props", allOpenProps],
-    "autoprefixer", // or postcss-preset-env
-  ],
-};
-
-export default config;
-```
-
-#### TailwindCSS + React Example
-
-```jsx
-export const Card = ({ children }) => (
-  // Note: it isn't currently possible to specify multiple inline animations in TailwindCSS, like in the PandaCSS example
-  <div className="rounded-2 p-fluid-3 shadow-2 hover:shadow-3 motionSafe:fade-in">
-    {children}
-  </div>
-);
-```
+TailwindCSS support is coming soon.
 
 ## Add custom Color Palette
 
@@ -183,7 +104,6 @@ export default defineConfig({
 
 (\*) Limitations:
 
-- Since it is auto-generated based on hues, the number of steps is predefined to 15.
-- Currently only LCH color palettes are generated, but we plan to add OKLCH support for HDR screens supporting P3 gamut,
-  and supported browsers.
-- The `generateTailwindColorPreset` function is not yet implemented.
+- Since it is auto-generated based on hues, the number of steps is predefined to 16.
+- Currently only LCH color palettes are generated.
+- TailwindCSS support is not yet implemented.

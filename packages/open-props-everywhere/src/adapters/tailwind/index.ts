@@ -1,9 +1,3 @@
-/**
- * TailwindCSS framework adapter module
- *
- * @module
- */
-
 import type { Config } from 'tailwindcss'
 
 // TODO: Implement the Tailwind CSS preset

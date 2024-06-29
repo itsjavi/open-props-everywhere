@@ -41,17 +41,17 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "colorjs.io": "^0.5.0",
+    "colorjs.io": "^0.5.2",
     "deepmerge": "^4.3.1"
   },
   "devDependencies": {
-    "@pandacss/types": "^0.40.1",
+    "@pandacss/types": "^0.41.0",
     "@types/jest": "^29.5.12",
-    "@types/node": "^20.14.2",
+    "@types/node": "^20.14.9",
     "parcel": "^2.12.0",
     "publint": "^0.2.8",
     "tailwindcss": "^3.4.4",
-    "typescript": "^5.4.5"
+    "typescript": "^5.5.2"
   },
   "publishConfig": {
     "access": "public"

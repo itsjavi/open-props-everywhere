@@ -18,11 +18,11 @@
     "version-release": "pnpm version-prepare && lerna publish -y --no-private --conventional-commits --create-release github"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.8.1",
+    "@biomejs/biome": "^1.8.3",
     "@parcel/packager-ts": "2.12.0",
     "@parcel/transformer-typescript-types": "2.12.0",
-    "lerna": "^8.1.3",
+    "lerna": "^8.1.5",
     "sort-package-json": "^2.10.0",
-    "typescript": "^5.4.5"
+    "typescript": "^5.5.2"
   }
 }

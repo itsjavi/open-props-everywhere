@@ -40,10 +40,7 @@
     "test": "bun test",
     "typecheck": "tsc --noEmit"
   },
-  "dependencies": {
-    "colorjs.io": "^0.5.2",
-    "deepmerge": "^4.3.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@pandacss/types": "^0.41.0",
     "@types/jest": "^29.5.12",

@@ -15,7 +15,8 @@
     "typecheck": "lerna run typecheck",
     "version-bump": "pnpm version-prepare && lerna version --no-private --conventional-commits",
     "version-prepare": "pnpm lint && pnpm build && pnpm test",
-    "version-release": "pnpm version-prepare && lerna publish -y --no-private --conventional-commits --create-release github"
+    "version-release": "pnpm version-prepare && lerna publish -y --no-private --conventional-commits --create-release github",
+    "version-release-nogit": "pnpm version-prepare && lerna publish -y --no-private"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",

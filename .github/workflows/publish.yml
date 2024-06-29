@@ -5,6 +5,16 @@ env:
 
 on:
   workflow_dispatch:
+    inputs:
+      version:
+        description: "Version bump"
+        required: true
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+        default: "patch"
 
 concurrency:
   group: publish-${{ github.ref }}
@@ -37,9 +47,7 @@ jobs:
           git config --global user.email "<>"
 
       - name: Publish to GitHub Package Registry
-        run: pnpm version-release-nogit
+        run: pnpm version-prepare && lerna publish -y --no-private ${{inputs.version}}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # - run: git push origin main --follow-tags

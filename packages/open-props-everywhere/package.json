@@ -1,6 +1,6 @@
 {
   "name": "open-props-everywhere",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Presets to integrate Open Props with PandaCSS and TailwindCSS",
   "keywords": [
     "open-props",
@@ -34,7 +34,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "rm -rf dist && parcel build --no-cache && pnpm publint",
+    "build": "rm -rf dist && parcel build --no-cache && pnpm publint && cp ../../README.md README.md && cp ../../LICENSE LICENSE",
     "dev": "parcel watch",
     "prepublishOnly": "pnpm build",
     "test": "bun test",
